@@ -1,9 +1,9 @@
 package cn.lilyhuli.dao;
 
-public class UserDao {
+
+public interface UserDao {
+
+    public void getUser();
 
 
-    public static void main(String[] args) {
-        System.out.println("ceshi tijiao");
-    }
 }
