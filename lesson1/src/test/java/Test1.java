@@ -2,6 +2,8 @@ import cn.lilyhuli.dao.UserDaoOracleImpl;
 import cn.lilyhuli.service.UserService;
 import cn.lilyhuli.service.UserServiceImpl;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Test1 {
 
@@ -26,6 +28,14 @@ public class Test1 {
         UserServiceImpl service = new UserServiceImpl();
         service.setUserDao(new UserDaoOracleImpl());
         service.getUser();
+
+    }
+
+    @Test
+    public void springTest(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        UserServiceImpl userServiceImpl = (UserServiceImpl)context.getBean("userServiceImpl");
+        userServiceImpl.getUser();
 
     }
 
